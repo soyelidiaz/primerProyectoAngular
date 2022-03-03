@@ -1,0 +1,37 @@
+<div class="contenedor">
+<h2> INGRESAR</h2>
+<form [formGroup]="miFormulario" (ngSubmit)="registrarse()" >
+    <div class="email">
+        <mat-form-field appearance="legacy">
+          <mat-label>E-Mail</mat-label>
+          <input matInput placeholder="mimail@gmail.com" type="email" required formControlName="email">
+        </mat-form-field>
+      </div>
+     
+        <div class="contraseña">
+            <mat-form-field appearance="legacy">
+              <mat-label>Genere su contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="clave">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+    </div>
+    <div  *ngIf="miFormulario.get('clave')?.errors && miFormulario.get('clave')?.dirty">
+        <p *ngIf="miFormulario.get('clave')?.hasError('required')"> El campo es obligatorio </p>
+        <p *ngIf="miFormulario.get('clave')?.hasError('minlength')"> La contraseña debe tener al menos 8 caracteres </p>
+     </div>
+     <div   *ngIf="miFormulario.get('email')?.errors && miFormulario.get('email')?.dirty">
+         <p *ngIf="miFormulario.get('email')?.hasError('email')">Ingrese un mail valido</p>
+         <p *ngIf="miFormulario.get('email')?.hasError('required')">El campo es obligatorio</p>
+     </div>
+    <section>  
+        <div class="example-label"></div>
+        <div class="example-button-row">
+        <button mat-raised-button color="accent" type="submit" >Ingresar</button>
+    </div>
+
+    </section>
+    
+        </form>
+    </div>

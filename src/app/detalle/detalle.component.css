@@ -1,0 +1,22 @@
+.tarjeta {
+    min-width: 900px;
+    max-width: 900px;
+    border-radius: 3%;
+}
+
+.mat-card-image {
+    border-radius: 10%;
+    width: 350px;
+    height: 400px;
+    display: auto;
+    margin-left:auto;
+    margin-right:auto;  
+    
+}
+
+.contenedor {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

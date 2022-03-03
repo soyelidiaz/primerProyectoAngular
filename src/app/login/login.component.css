@@ -1,0 +1,27 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  section {
+    display: table;
+  }
+  
+  .example-label {
+    display: auto;
+    font-size: 96px;
+    margin-left: 2px;
+    min-width: 110px;
+  }
+  
+  .example-button-row {
+    display: auto;
+    width: auto;
+  }
+
+  .contenedor {
+    background-color: antiquewhite;
+    border: 50px solid antiquewhite;
+    border-radius: 10%;
+  }

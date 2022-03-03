@@ -1,0 +1,17 @@
+
+<mat-grid-list [cols]="breakpoint" rowHeight="1:0.7" (window:resize)="onResize($event)">
+    <mat-grid-tile *ngFor="let elemento of personajesAsync | async">
+        <mat-card>
+                <mat-card-header>
+                    <img mat-card-avatar src="{{elemento.image}}">
+                    <mat-card-title>{{elemento.title}}</mat-card-title>
+                    <mat-card-subtitle>Director: {{elemento.director}}</mat-card-subtitle>
+                </mat-card-header>
+                    <mat-card-actions>
+                        <div style="text-align: center">
+                        <button mat-raised-button routerLink="/detalle/{{elemento.id}}" color="accent"> DETALLE </button>
+                    </div>
+                    </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
